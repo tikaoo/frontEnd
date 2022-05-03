@@ -1,0 +1,55 @@
+<div class="flex-container">
+  <button
+    mat-raised-button
+    color="accent"
+    class="btn2"
+    routerLink="/funcionario"
+  >
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <mat-card>
+    <form
+      action="form.foto"
+      id="main-form"
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>Nome do Funcionário</mat-label>
+        <input type="text" matInput formControlName="nome" name="nome" />
+        <mat-error> Esse campo é obrigatório! </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail do Funcionário</mat-label>
+        <input type="email" matInput formControlName="email" name="email" />
+        <mat-error>
+          <span *ngIf="form.get('email')?.getError('required')"
+            >Esse campo é obrigatório!</span
+          >
+          <span *ngIf="form.get('email')?.getError('email')">
+            Digite um formato de e-mail válido!</span
+          >
+        </mat-error>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        class="btn"
+        (click)="fileInput.click()"
+      >Adicionar Foto
+      </button>
+      <input
+        id="file-input"
+        type="file"
+        #fileInput
+        formControlName="foto"
+        accept="image/*"
+        (change)="fileChange($event)"
+      />
+      <button mat-raised-button color="accent" type="submit" class="btn2">
+        Cadastrar
+      </button>
+    </form>
+  </mat-card>
+</div>

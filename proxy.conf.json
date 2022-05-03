@@ -1,0 +1,9 @@
+{
+
+  "/servicos":{
+  "target": "http://localhost:8080",
+  "secure":true,
+  "changeOrigin":false,
+  "logLevel":"debug"
+   }
+  }

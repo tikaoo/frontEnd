@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Dados não Salvos!</h2>
+<mat-dialog-content>
+  <p>Você está prestes a sair sem salvar, deseja mesmo continuar?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="warn" [mat-dialog-close]="true"
+  routerLink="/funcionario">
+ Continuar</button>
+  <button mat-raised-button color="accent" [mat-dialog-close]="false">Cancelar</button>
+</mat-dialog-actions>
